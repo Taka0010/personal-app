@@ -1,0 +1,43 @@
+.header{
+  position: relative;
+  height: 3rem;
+  padding-bottom:2rem;
+  .headerContents{
+    position: fixed;
+    width: 100%;
+    
+    background: $color-light-green;
+    &__logo{
+      width: 10rem;
+      line-height: 3rem;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .user{
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: 25rem;
+      display: flex;
+      justify-content: space-between;
+      &__info{
+        width: 12rem;
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+}
+
+.footer{
+  width: 100%;
+  height: 3rem;
+  position: fixed;
+  bottom: 0;
+  background: $color-white;
+  &__txt{
+    text-align: center;
+    line-height: 3rem;
+  }
+}
