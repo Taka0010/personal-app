@@ -1,24 +1,69 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## ↓↓↓DB設計↓↓↓
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|email|string|null: false|
+|password|string|null: false|
+|nickname|string|null: false|
 
-Things you may want to cover:
+### Association
+- has_many :posts
+- has_many :comments
+- has_many :likes
 
-* Ruby version
+## postsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|image|string||
+|message|text||
+|user_id|integer|null: false, foreign_key: true|
 
-* System dependencies
+### Association
+- belongs_to :user
+- has_many :comments
+- has_many :likes
+- has_many :posts_tags
+- has_many :tags, through: :posts_tags
 
-* Configuration
+## commentsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|post_id|integer|null: false, foreign_key: true|
 
-* Database creation
+### Association
+- belongs_to :user
+- belongs_to :post
 
-* Database initialization
+## likesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|like|boolean|default: false|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 
-* How to run the test suite
+### Association
+- belongs_to :user
+- belongs_to :post
 
-* Services (job queues, cache servers, search engines, etc.)
+## tagsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|strings||
 
-* Deployment instructions
+### Association
+- has_many :post_tags
+- has_many :posts, through: :posts_tags
 
-* ...
+## post-tagsテーブル(中間テーブル)
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
+- belongs_to :post
+## ↑↑↑DB設計↑↑↑
