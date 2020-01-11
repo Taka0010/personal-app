@@ -1,7 +1,7 @@
 #login-page{
   width: 100%;
   .contents{
-    width: 50rem;
+    width: 65rem;
     margin: 10rem auto;
     padding: 2rem;
     display: flex;
@@ -12,7 +12,7 @@
       width: 46%;
       margin-right: auto;
       text-align: center;
-      font-size: 1.3rem;
+      font-size: 1.6rem;
       color: $color-light-green;
     }
     &__right{
@@ -34,6 +34,9 @@
     }
     .remenberable{
       margin: 1rem 0;
+    }
+    .checkBox{
+      margin-bottom: .5rem;
     }
     .login-btn{
       width: 8rem;

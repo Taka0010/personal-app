@@ -1,7 +1,7 @@
 #account-page{
   width: 100%;
   .contents{
-    width: 50rem;
+    width: 65rem;
     margin: 10rem auto;
     padding: 2rem;
     display: flex;
@@ -12,7 +12,7 @@
       width: 46%;
       margin-right: auto;
       text-align: center;
-      font-size: 1.1rem;
+      font-size: 1.4rem;
       color: $color-light-green;
     }
     &__right{
