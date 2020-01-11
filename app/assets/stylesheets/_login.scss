@@ -1,0 +1,50 @@
+#login-page{
+  width: 100%;
+  .contents{
+    width: 50rem;
+    margin: 10rem auto;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $color-light-grey;
+    &__left{
+      width: 46%;
+      margin-right: auto;
+      text-align: center;
+      font-size: 1.3rem;
+      color: $color-light-green;
+    }
+    &__right{
+      width: 50%;
+      margin-bottom: 1rem;
+    }
+    .field{
+      &-label{
+        font-size: 1.4rem;
+        padding: 1rem 0;
+        display: inline-block;
+      }
+      input{
+        display: inline-block;
+        width: 100%;
+        padding: .5rem;
+        background-color: $color-sub-light-green;
+      }
+    }
+    .remenberable{
+      margin: 1rem 0;
+    }
+    .login-btn{
+      width: 8rem;
+      border-radius: 5%;
+      padding: 1rem;
+      font-size: 1.5rem;
+      transition: .4s;
+      &:hover{
+        background: $color-light-green;
+        color: $color-main-white;
+      }
+    }
+  }
+}
