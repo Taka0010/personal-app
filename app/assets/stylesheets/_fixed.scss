@@ -13,6 +13,9 @@
       font-weight: bold;
       margin: 0 auto;
       text-align: center;
+      a{
+        color: $color-main-white;
+      }
     }
 
     .user{
@@ -47,6 +50,24 @@
             background: #ffd9c7;
           }
         }
+        &-signup{
+          transition: .4s;
+          &:hover{
+            background: #c7fff9;
+          }
+          a{
+            color: $color-black;
+          }
+        }
+        &-login{
+          transition: .4s;
+          &:hover{
+            background: #c7fff9;
+          }
+          a{
+            color: $color-black;
+          }
+        }
       }
       &__info-box{
         background: $color-main-white;
@@ -64,6 +85,7 @@
   width: 100%;
   height: 3.5rem;
   background: $color-sub-white;
+  margin-top: auto;
   &__txt{
     text-align: center;
     line-height: 3.5rem;
