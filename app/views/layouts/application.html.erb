@@ -12,13 +12,26 @@
     <header class="header">
       <div class="headerContents">
         <p class="headerContents__logo">PersonalApp</p>
-        <div class="user">
-          <div class="user__name"><span>TAKAYUKI</span></div>
+        <% if user_signed_in? %>
+          <div class="user">
+          <div class="user__name">
+            <span><%= current_user.nickname %></span>
+          </div>
           <div class="user__info">
             <div class="user__info-box user__info-mypage">My Page</div>
-            <div class="user__info-box user__info-logout">Log Out</div>
+            <div class="user__info-box user__info-edit"><%= link_to "Edit", edit_user_path(current_user) %></div>
+            <div class="user__info-box user__info-logout"><%= link_to "Log Out", destroy_user_session_path, method: :delete %></div>
           </div>
         </div>
+        <% else %>
+          <div class="user">
+            <div class="user__info">
+              <div class="user__info-box user__info-signin">Sign in</div>
+              <div class="user__info-box user__info-login">Log in</div>
+            </div>
+          </div>
+        <% end %>
+        
       </div>
     </header>
 
