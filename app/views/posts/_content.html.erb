@@ -1,0 +1,23 @@
+<div class="main-content">
+  <div class="main-content__userName">
+    <%= post.user.nickname %>
+  </div>
+  <div class="main-content__image">
+    <img src="<%= post.image %>">
+  </div>
+  <div class="main-content__icons">
+    <div class="main-content__logo"><i class="fas fa-heart"></i></div>
+    <div class="main-content__logo"><i class="far fa-comment"></i></div>
+  </div>
+  <div class="main-content__text">
+    <div class="main-content__text-userName"><%= post.user.nickname %></div>
+    <%= post.message %>
+  </div>
+  <div class="main-content__tags">
+    tagtagtagtagtagtagtagtagtag
+  </div>
+  <div class="main-content__comments">
+    <p class="main-content__comments-ttl">comment</p>
+    <div class="comments-area">一覧</div>
+  </div>
+</div>
