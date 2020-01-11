@@ -9,6 +9,26 @@
   </head>
 
   <body>
+    <header class="header">
+      <div class="headerContents">
+        <p class="headerContents__logo">PersonalApp</p>
+        <div class="user">
+          <div class="user__name"><span>TAKAYUKI</span></div>
+          <div class="user__info">
+            <div class="user__info-box user__info-mypage">My Page</div>
+            <div class="user__info-box user__info-logout">Log Out</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
     <%= yield %>
+
+    <footer class="footer">
+      <p class="footer__txt">
+        Copyright PersonalApp 2020.
+      </p>
+    </footer>
+
   </body>
 </html>

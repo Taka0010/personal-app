@@ -1,0 +1,31 @@
+<div class="sub__content">
+  <%= form_for(model: @tweet, local: true) do |f| %>
+    <div class="field">
+      <div class="field__label">
+        <%= f.label :image %>
+      </div>
+      <div class="field__input">
+        <%= f.text_field :image, placeholder: "Image Url" %>
+      </div>
+    </div>
+    <div class="field">
+      <div class="field__label">
+        <%= f.label :text %>
+      </div>
+      <div class="field__input">
+        <%= f.text_area :text, placeholder: "text" , rows: "10" %>
+      </div>
+    </div>
+    <div class="field">
+      <div class="field__label">
+        <%= f.label :name %>
+      </div>
+      <div class="field__input">
+        <%= f.text_field :name, placeholder: "＃タグ" %>
+      </div>
+    </div>
+    <div class="action">
+      <%= f.submit "SUBMIT" %>
+    </div>
+  <% end %>
+</div>
