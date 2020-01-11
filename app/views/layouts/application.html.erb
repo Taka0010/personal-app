@@ -11,7 +11,7 @@
   <body>
     <header class="header">
       <div class="headerContents">
-        <p class="headerContents__logo">PersonalApp</p>
+        <p class="headerContents__logo"><%= link_to "PersonalApp", root_path %></p>
         <% if user_signed_in? %>
           <div class="user">
           <div class="user__name">
@@ -23,11 +23,13 @@
             <div class="user__info-box user__info-logout"><%= link_to "Log Out", destroy_user_session_path, method: :delete %></div>
           </div>
         </div>
+        <% elsif request.path.include?("sign_in") %>
+        <% elsif request.path.include?("sign_up") %>
         <% else %>
           <div class="user">
             <div class="user__info">
-              <div class="user__info-box user__info-signin">Sign in</div>
-              <div class="user__info-box user__info-login">Log in</div>
+              <div class="user__info-box user__info-signup"><%= link_to "Sign up", new_user_registration_path %></div>
+              <div class="user__info-box user__info-login"><%= link_to "Log in", new_user_session_path %></div>
             </div>
           </div>
         <% end %>
