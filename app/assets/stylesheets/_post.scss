@@ -5,8 +5,8 @@
     width: 60rem;
     background-color: $color-sub-light-green;
     margin: 1.5rem auto;
-  padding: 1rem 0;
-  box-shadow: 1px 3px 10px 1px #9E939A;
+    padding: 1rem 0;
+    box-shadow: 1px 3px 10px 1px #9E939A;
     &__userName{
       width: 100%;
       font-size: 1.2rem;
@@ -69,7 +69,6 @@
       }
     }
   }
-  
 }
 
 .sub__content{

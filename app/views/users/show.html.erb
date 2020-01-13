@@ -1,0 +1,10 @@
+<div class="myPage">
+  <div class="container">
+    <h1 class="container__ttl">My Page</h1>
+    <div class="container__imgBox">
+      <% @posts.each do |post|%>
+        <%= render partial: "posts/img", locals: { post: post } %>
+      <% end%>
+    </div>
+  </div>
+</div>
