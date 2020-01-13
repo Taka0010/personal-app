@@ -15,10 +15,9 @@
         <% if user_signed_in? %>
           <div class="user">
           <div class="user__name">
-            <span><%= current_user.nickname %></span>
+            <span><%= link_to "#{current_user.nickname}", user_path(current_user) %></span>
           </div>
           <div class="user__info">
-            <div class="user__info-box user__info-mypage">My Page</div>
             <div class="user__info-box user__info-edit"><%= link_to "Edit", edit_user_path(current_user) %></div>
             <div class="user__info-box user__info-logout"><%= link_to "Log Out", destroy_user_session_path, method: :delete %></div>
           </div>
