@@ -32,6 +32,7 @@
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
 |post_id|integer|null: false, foreign_key: true|
+|commrnt|text||
 
 ### Association
 - belongs_to :user
