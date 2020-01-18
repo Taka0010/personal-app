@@ -38,16 +38,36 @@
     .checkBox{
       margin-bottom: .5rem;
     }
-    .login-btn{
-      width: 8rem;
-      border-radius: 5%;
-      padding: 1rem;
-      font-size: 1.5rem;
-      transition: .4s;
-      &:hover{
-        background: $color-light-green;
-        color: $color-main-white;
+    .actions{
+      display: flex;
+      justify-content: space-between;
+      .login-btn{
+        width: 8rem;
+        border-radius: 5%;
+        padding: 1rem;
+        font-size: 1.5rem;
+        transition: .4s;
+        color: #000;
+        border: 1px solid rgb(216, 216, 216);
+        &:hover{
+          background: $color-light-green;
+          color: $color-main-white;
+        }
+      }
+      a .login-btn{
+        width: 8rem;
+        border-radius: 5%;
+        padding: 1rem;
+        font-size: 1.5rem;
+        transition: .4s;
+        color: #000;
+        border: 1px solid rgb(216, 216, 216);
+        &:hover{
+          background: $color-light-green;
+          color: $color-main-white;
+        }
       }
     }
+    
   }
 }
