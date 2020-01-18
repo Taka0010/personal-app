@@ -23,6 +23,8 @@
     <%= post.message %>
   </div>
   <div class="main-content__tags">
-    tagtagtagtagtagtagtagtagtag
+  <% if post.tag? %>
+    #<%= post.tag %>
+  <% end %>
   </div>
 </div>
