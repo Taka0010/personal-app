@@ -6,8 +6,17 @@
     <img src="<%= post.image %>">
   </div>
   <div class="main-content__icons">
-    <div class="main-content__logo"><i class="fas fa-heart"></i></div>
-    <div class="main-content__logo"><i class="far fa-comment"></i></div>
+    <% if user_signed_in? %>
+      <% if post.liked_by?(current_user) %>
+        <div class="main-content__logo-fas"><%=link_to post_likes_path(post.id), method: :delete do %><i class="fas fa-heart"></i><% end %></div>
+      <% else %>
+        <div class="main-content__logo-far"><%=link_to post_likes_path(post.id), method: :post do %><i class="far fa-heart"></i><% end %></div>
+      <% end %>
+    <% else %>
+      <div class="main-content__logo-far"><i class="far fa-heart"></i></div>
+    <% end %>
+    <div class="main-content__logo"><%= link_to post_path(post.id) do %><i class="far fa-comment"></i><% end %></div>
+    <div class="likes_count">いいね！数<span><%= post.likes.count %></span></div>
   </div>
   <div class="main-content__text">
     <div class="main-content__text-userName"><%= post.user.nickname %></div>
@@ -15,9 +24,5 @@
   </div>
   <div class="main-content__tags">
     tagtagtagtagtagtagtagtagtag
-  </div>
-  <div class="main-content__comments">
-    <p class="main-content__comments-ttl">comment</p>
-    <div class="comments-area">一覧</div>
   </div>
 </div>

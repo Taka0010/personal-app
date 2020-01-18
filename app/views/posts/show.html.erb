@@ -1,0 +1,43 @@
+<div class="one-post">
+  <div class="main-content">
+    <div class="main-content__userName">
+      <%= @post.user.nickname %>
+    </div>
+    <div class="main-content__image">
+      <img src="<%= @post.image %>">
+    </div>
+    <div class="main-content__icons">
+      <div class="main-content__logo"><i class="fas fa-heart"></i></div>
+    </div>
+    <div class="main-content__text">
+      <div class="main-content__text-userName"><%= @post.user.nickname %></div>
+      <%= @post.message %>
+    </div>
+    <div class="main-content__tags">
+      tagtagtagtagtagtagtagtagtag
+    </div>
+    <div class="main-content__comments">
+      <p class="main-content__comments-ttl">comment</p>
+      <div class="comments__container">
+        <% if current_user %>
+          <%= form_for [@post, @comment] do |f| %>
+            <%= f.text_area :comment, placeholder: "コメントする", class: "cmt-box", rows: "3" %>
+            <%= f.submit "SEND", id: "cmt-btn" %>
+          <% end %>
+        <% else %>
+          <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+        <% end %>
+      </div>
+      <div class="comments-area">
+        <p>＜コメント一覧＞</p>
+        <% if @comments %>
+          <% @comments.each do |comment| %>
+          <p>
+            <span><%= comment.user.nickname %></span>：<%= comment.comment %>
+          </p>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
