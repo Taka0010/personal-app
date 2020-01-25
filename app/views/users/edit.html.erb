@@ -1,3 +1,24 @@
 <div id="acount-page" class="acount-page">
-test
+<div class="contents">
+    <div class="contents__left">
+      <h1 class="contents__left-ttl">Edit account</h1>
+    </div>
+    <div class="contents__right">
+      <%= form_for(current_user) do |f| %>
+        <div class="field">
+          <%= f.label :nickname, class: "field-label" %><br />
+          <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :email, class: "field-label" %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "Update", class: "login-btn" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
