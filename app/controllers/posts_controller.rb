@@ -16,8 +16,13 @@ class PostsController < ApplicationController
   end
 
   def create
-    Post.create(post_params)
-    redirect_to root_path
+    # Post.create(post_params)
+    # redirect_to root_path
+
+    @post = Post.create(post_params)
+    respond_to do |format|
+      format.json
+    end
   end
 
   private
