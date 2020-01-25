@@ -1,8 +1,8 @@
 class CommentsController < ApplicationController
   def create
     Comment.create(comment_params)
-    # redirect_to post_comments_path(@post)
-    redirect_to root_path
+    redirect_to post_path(params[:post_id])
+    # redirect_to root_path
   end
 
   private
