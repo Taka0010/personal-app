@@ -139,6 +139,12 @@
       color: #000;
     }
   }
+  .like_block{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 1rem;
+  }
 }
 
 .sub__content{

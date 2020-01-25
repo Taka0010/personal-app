@@ -1,16 +1,16 @@
 <div class="sub__content">
   <%# <%= link_to "投稿", new_post_path, class: "postBtn" %>
-  <%= form_for @post do |f| %>
+  <%= form_for @post, html: {id: "form_ajax"} do |f| %>
     <p class="input__form__img">
-      Image：<%= f.text_field :image, placeholder: "Image Url" %>
+      Image：<%= f.text_field :image, placeholder: "Image Url", class: "img_ajax" %>
       <%# Image：<input type="text" name="img" size="20" placeholder="img"> %>
     </p>
     <p class="input__form__msg">
-      Text：<%= f.text_area :message, placeholder: "message" %>
+      Text：<%= f.text_area :message, placeholder: "message", class: "msg_ajax" %>
       <%# Text：<textarea type="text" name="msg" rows="4" cols="25" placeholder="text"></textarea> %>
     </p>
     <p class="input__form__tag">
-     Tag：<%= f.text_field :tag, placeholder: "message" %>
+     Tag：<%= f.text_field :tag, placeholder: "message", class: "tag_ajax" %>
     </p>
     <%# <p class="input__form__tag">
       Tags：<input type="text" name="tag" size="20" placeholder="#タグ">

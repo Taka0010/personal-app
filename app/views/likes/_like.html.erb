@@ -1,0 +1,10 @@
+<% if user_signed_in? %>
+  <% if post.liked_by?(current_user) %>
+    <div class="main-content__logo-fas"><%=link_to post_likes_path(post.id), class: "likeBtn", method: :delete, remote: true do %><i class="fas fa-heart"></i><% end %></div>
+  <% else %>
+    <div class="main-content__logo-far"><%=link_to post_likes_path(post.id), class: "likeBtn", method: :post, remote: true do %><i class="far fa-heart"></i><% end %></div>
+  <% end %>
+<% else %>
+  <div class="main-content__logo-far"><i class="far fa-heart"></i></div>
+<% end %>
+<div class="likes_count">LIKE数<span><%= post.likes.count %></span></div>
