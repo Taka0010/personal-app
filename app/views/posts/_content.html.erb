@@ -2,15 +2,16 @@
   <div class="main-content__userName">
     <%= post.user.nickname %>
   </div>
-  <div class="main-content__image">
-    <img src="<%= post.image %>">
-  </div>
+  <%= link_to post_path(post.id), method: :get do %>
+    <div class="main-content__image">
+      <img src="<%= post.image %>">
+    </div>
+  <% end %>
   <div class="main-content__icons">
     <div class="like_block" id="like_btn_<%= post.id %>">
       <%= render partial: 'likes/like', locals: {post: post} %>
     </div>
-    <div class="main-content__logo"><%= link_to post_path(post.id) do %><i class="far fa-comment"></i><% end %></div>
-    
+    <div class="main-content__logo"><%= link_to post_path(post.id), method: :get do %><i class="far fa-comment"></i><% end %></div>
   </div>
   <div class="main-content__text">
     <div class="main-content__text-userName"><%= post.user.nickname %></div>

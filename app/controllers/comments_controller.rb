@@ -1,8 +1,17 @@
 class CommentsController < ApplicationController
   def create
-    Comment.create(comment_params)
-    redirect_to post_path(params[:post_id])
+    # Comment.create(comment_params)
+    # redirect_to post_path(params[:post_id])
     # redirect_to root_path
+    # @comment = Comment.create(comment_params)
+    # respond_to do |format|
+    #   format.json
+    # end
+    @comment = Comment.create(comment_params)
+    respond_to do |format|
+      format.html { redirect_to post_path(params[:post_id])  }
+      format.json
+    end
   end
 
   private

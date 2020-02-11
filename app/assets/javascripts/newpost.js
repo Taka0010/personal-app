@@ -22,7 +22,7 @@ $(function(){
                 </div>`
     return html;
   }
-  $('#form_ajax').on('submit', function(e){
+  $('#_form_ajax').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr('action')

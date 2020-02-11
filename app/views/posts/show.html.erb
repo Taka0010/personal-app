@@ -7,7 +7,11 @@
       <img src="<%= @post.image %>">
     </div>
     <div class="main-content__icons">
-      <div class="main-content__logo"><i class="fas fa-heart"></i></div>
+      <% if @post.likes.count >= 2%>
+        <div class="likes_count"><span><%= @post.likes.count %></span> LIKES</div>
+      <% else %>
+        <div class="likes_count"><span><%= @post.likes.count %></span> LIKE</div>
+      <% end %>
     </div>
     <div class="main-content__text">
       <div class="main-content__text-userName"><%= @post.user.nickname %></div>
@@ -20,7 +24,7 @@
       <p class="main-content__comments-ttl">comment</p>
       <div class="comments__container">
         <% if current_user %>
-          <%= form_for [@post, @comment] do |f| %>
+          <%= form_for [@post, @comment], html: {id: "comment_ajax"} do |f| %>
             <%= f.text_area :comment, placeholder: "コメントする", class: "cmt-box", rows: "3" %>
             <%= f.submit "SEND", id: "cmt-btn" %>
           <% end %>
@@ -31,11 +35,15 @@
       <div class="comments-area">
         <p>＜コメント一覧＞</p>
         <% if @comments %>
-          <% @comments.each do |comment| %>
-          <p>
-            <span><%= comment.user.nickname %></span>：<%= comment.comment %>
-          </p>
-          <% end %>
+          
+          <div class="comments-list">
+            <% @comments.each do |comment| %>
+              <p>
+                <span><%= comment.user.nickname %></span>：<%= comment.comment %>
+              </p>
+            <% end %>
+          </div>
+          
         <% end %>
       </div>
     </div>

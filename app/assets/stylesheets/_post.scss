@@ -146,6 +146,14 @@
     margin-right: 1rem;
   }
 }
+@media(max-width:769px){
+  .main-contents{
+    .main-content{
+      width: 100%;
+    }
+  }
+  
+}
 
 .sub__content{
   position: fixed;
@@ -192,3 +200,4 @@
     }
   }
 }
+

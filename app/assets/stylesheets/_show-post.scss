@@ -29,6 +29,10 @@
       display: flex;
       justify-content: end;
       border-bottom: 1px solid #000;
+      .likes_count{
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
     }
     &__logo{
       margin-right: 1rem;
